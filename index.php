@@ -7,16 +7,31 @@
   <body>
       <?php
 
+      // Creare un array con 15 numeri casuali, tenendo conto
+      // che l'array non dovrà contenere lo stesso numero più di una volta
+
       $rndNumrs = [];
 
-      for ($i=0; $i < 15; $i++) {
+      // for ($i=0; $i < 15; $i++) {
+      //
+      //   $rnd = rand(1, 100);
+      //
+      //
+      // }
+
+
+      while (count($rndNumrs) < 15) {
 
         $rnd = rand(1, 100);
 
-        echo '<h1>' . $rnd . '</h1>';
+        if(in_array($rnd, $rndNumrs)){
+
+          $rndNumrs []= $rnd;
+
+        }
       }
 
-
+      var_dump($rndNumrs)
 
    ?>
   </body>
